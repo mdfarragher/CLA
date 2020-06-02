@@ -76,7 +76,7 @@ In the Azure Machine Learning Studio you'll notice a menu bar on the left. In th
 
 You're now on the compute page. You'll notice that there are no compute instances configured yet and the list is empty. 
 
-Make sure the Compute Instance tab is selected, and then click on the Add button:
+Make sure the Compute Instance tab is selected, and then click on the New button:
 
 ![Compute setup step 1](./assets/compute-step1.png)
 
@@ -84,7 +84,7 @@ To create a new compute instance, specify the following:
 
 * The name of the new compute instance.
 * The virtual machine type, this can be either CPU or GPU. Select CPU for this training to keep costs low. 
-* Virtual Machine Size. Select the smallest available size D1. The virtual machine will have only one virtual CPU core and 3.5 gigabytes of RAM, this again keeps costs low. 
+* The virtual machine size. Select the smallest available size D1. The virtual machine will have only one virtual CPU core and 3.5 gigabytes of RAM, this again keeps costs low. 
 
 Note that we're selecting the smallest possible virtual machine size for this training in order to keep daily costs as low as possible. For large-scale professional machine learning projects, you would probably select the GPU virtual machine type and a much larger size. But keep in mind that this will also be significantly more expensive.  
 
@@ -96,7 +96,7 @@ The compute instance will now be created. This can take a couple of minutes, so 
 
 ## Create a Compute Cluster
 
-Make sure you select the Compute Cluster tab at the top of the page, and then click the Add button. 
+Make sure you select the Compute Cluster tab at the top of the page, and then click the New button. 
 
 We're going to set up a new cluster by providing the following information:
 
@@ -108,7 +108,7 @@ We're going to set up a new cluster by providing the following information:
 * Maximum number of nodes. Set this to 2, so that during peak load we never have more than two virtual machines running.
 * Idle seconds before shut down. Set this to 120 seconds. If we are not using our cluster for more than two minutes, it will automatically shut down. 
 
-You can see that we're again selecting values to keep costs as low as possible. This will work fine during this training, but you will probably select more generous settings during production. 
+You can see that we're again selecting values to keep costs as low as possible. This will work fine in this course, but you will probably select more generous settings for your own large-scale machine learning projects. 
 
 Click the blue Create button to set up the cluster. 
 
@@ -119,3 +119,4 @@ After a couple of minutes, both the compute instance and the compute cluster wil
 ![Azure ML Compute overview](./assets/compute-running.png)
 
 Congratulations! Your Azure Machine Learning Studio is now fully operational. We will use these compute resources in the upcoming course assignments to build, train, and run several cool machine learning models. 
+ 
