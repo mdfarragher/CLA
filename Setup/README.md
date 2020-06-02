@@ -66,9 +66,9 @@ For this training you will need only a tiny cluster. We will limit the total num
 
 To get started, you'll need to set up the following:
 
-* A Compute Instance. This is a single virtual machine that orchestrates machine learning experiments. The compute instance starts and stops training jobs and exports and imports data to and from the compute clusters. We can also use the compute instance to run Jupyter notebooks.
+* A Compute Instance. This is a single virtual machine that hosts a Jupyter Labs installation that provides a cloud-based Python notebook environment for machine learning practicioners. We can also train small machine learning models with this single virtual machine.
 
-* A Compute Cluster. This is a cluster of virtual machines that will be used to train machine learning models. 
+* A Compute Cluster. This is a scalable cluster of multiple virtual machines that can be used to train large-scale machine learning models. 
 
 Let's set up both of them right now. 
 
