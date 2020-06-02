@@ -20,7 +20,9 @@ Now click the Create A Resource button (with the blue plus sign icon) and search
 
 ![Setup step 1](./assets/step1.png)
 
-You'll see an overview page with information about Azure Machine Learning. Click the Create button to confirm your choice:
+You'll see an overview page with information about Azure Machine Learning. 
+
+Click the Create button to confirm your choice:
 
 ![Setup step 2](./assets/step2.png)
 
