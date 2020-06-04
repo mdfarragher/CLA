@@ -1,4 +1,4 @@
-# Assignment: Create the California Housing dataset
+# Assignment: Set up the California Housing dataset
 
 In this assignment you're going to load a dataset with the prices of houses in California into Azure. The data is not ready for training yet and needs a bit of preprocessing. 
 
@@ -108,34 +108,73 @@ You'll see a message that the datastore was successfully created, and it will ap
 
 ## Create an Azure ML Dataset
 
--------------- TOT HIER --------------
+Our final step is to set up the California Housing dataset in our Azure Machine Learning Workspace. 
 
+Go to the Datasets page and click on the +Create Dataset link, and then select "From Datasource" from the dropdown menu.
 
-Now that you have some compute resources that you can use to process data, you'll need a way to store and ingest the data to be processed.
+![Setup dataset step 1](./assets/dsetstep1.png)
 
-1. In the *Studio* interface, view the **Datastores** page. Your Azure ML workspace already includes two datastores based on the Azure Storage account that was created along with the workspace. These are used to store notebooks, configuration files, and data.
+In the next page, provide the following information:
 
-   > **Note**: In a real-world environment, you'd likely add custom datastores that reference your business data stores - for example, Azure blob containers, Azure Data Lakes, Azure SQL Databases, and so on. You'll explore this later in the course.
+* The name of the dataset to create. Fill in "california-housing-dataset" here.
+* The type of the dataset. Since we're working with a comma-separated datafile, the type should be set to Tabular.
+* A description of the dataset. You can leave this field blank.
 
-2. In the *Studio* interface, view the **Datasets** page. Datasets represent specific data files or tables that you plan to work with in Azure ML.
-3. Create a new dataset from web files, using the following settings:
-    * **Basic Info**:
-        * **Web URL**: https://aka.ms/diabetes-data
-        * **Name**: diabetes dataset (*be careful to match the case and spacing*)
-        * **Dataset type**: Tabular
-        * **Description**: Diabetes data
-    * **Settings and preview**:
-        * **File format**: Delimited
-        * **Delimiter**: Comma
-        * **Encoding**: UTF-8
-        * **Column headers**: Use headers from first file
-        * **Skip rows**: None
-    * **Schema**:
-        * Include all columns other than **Path**
-        * Review the automatically detected types
-    * **Confirm details**:
-        * Do not profile the dataset after creation
-4. After the dataset has been created, open it and view the **Explore** page to see a sample of the data. This data represents details from patients who have been tested for diabetes, and you will use it in many of the subsequent labs in this course.
+Note that the dataset also has a version number which is set to 1. If we decide to load more data later on, or change the existing data, the version number will automatically increment. 
 
-    > **Note**: You can optionally generate a *profile* of the dataset to see more details. You'll explore datasets in more detail later in the course.
+![Setup dataset step 2](./assets/dsetstep2.png)
+
+Click the blue Next button at the bottom of the page to continue to the next step. 
+
+Now you need to select the datastore which contains the data to load. Select the datastore you created previously: california_housing_data.
+
+You also need to provide a path specification that determines which files to load into this dataset. You can specify nested subfolders and wildcard characters here.  
+
+Note that there's also a special "/**" wildcard that will load all files in all subfolders into the dataset.  
+
+Our datastore only contains one csv file in the root folder, so you can just enter a single * wildcard here.
+
+![Setup dataset step 3](./assets/dsetstep3.png)
+
+Click the blue Next button to continue. 
+
+Azure Machine Learning will now scan the files in the datastore and attempt to determine the file format. You'll see the following information appear:
+
+* File format: Delimited. This is correct.
+* Delimiter: Comma. This is correct.
+* Encoding: UTF-8. This is correct.
+* Column headers: None. This is not correct, our file has the column headers in the first row. So change this field to: Use headers from the first file.
+* Skip rows: None. This is correct.
+
+You can see a preview of the first few lines of the file at the bottom of the page. Note how all the columns appear with their data and headers. This indicates that the file is being parsed correctly.  
+
+![Setup dataset step 4](./assets/dsetstep4.png)
+
+Click the blue Next button to continue. 
+
+You're now seeing a list of data types for each column in the file. Azure Machine Learning has determined that all columns hold Decimal data. This is correct, so we don't need to change anything.  
+
+Also note the Include switches for each column. By toggling these switches, we can decide which columns get included in the dataset. 
+
+Note that there is an initial column called Path (which will not be included). This column contains the full path of the file that contains the record.
+
+As we're working with only a single datafile here, this is not very useful right now. But you can use this column in scenarios where you are loading data from many different csv files and you need to keep track from which source file each record originated.
+
+![Setup dataset step 5](./assets/dsetstep5.png)
+
+Click the blue Next button at the bottom of the page.
+
+The dataset is now fully configured and Azure Machine Learning shows a summary of all settings. You can double-check that you entered everything correctly and then click the blue Create button to create the dataset.
+
+![Setup dataset step 6](./assets/dsetstep6.png)
+
+The dataset will now be created. After a few seconds the overview page appears, with a green notification that the dataset has been created successfully. The California housing data should now also appear in the list of datasets.
+
+Your overview page will look like this:
+
+![Setup dataset step 7](./assets/dsetstep7.png)
+
+Congratulations! You have successfully set up the California Housing dataset, and we are now ready to start training machine learning models with this data.
+
+We will use this dataset in later assignments.
 
