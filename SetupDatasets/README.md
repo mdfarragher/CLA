@@ -1,6 +1,6 @@
 # Assignment: Set up the California Housing dataset
 
-In this assignment you're going to load a dataset with the prices of houses in California into Azure. The data is not ready for training yet and needs a bit of preprocessing. 
+In this assignment you're going to load a dataset with the prices of houses in California into Azure.  
 
 The first thing you'll need is a data file with house prices. The data from the 1990 California cencus has exactly what we need. 
 
