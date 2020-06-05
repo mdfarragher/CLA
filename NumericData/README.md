@@ -60,6 +60,7 @@ Now take a look at each column. What do you think of the quality of this dataset
 
 See if you can answer the following questions:
 
+* How many records were read correctly? Are there any missing, empty, or error values that we need to take into account? 
 * Which columns do not need further processing and are ready for machine learning training?
 * Which columns need to be scaled to bring their numeric range in line with the other columns in the dataset?
 * Look at the Min and Max values for each column. Do you see anything weird?
