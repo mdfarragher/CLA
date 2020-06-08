@@ -59,4 +59,6 @@ Run the pipeline in a new experiment, and check out the evaluation results after
 
 What are your new RMSE and MAE values? Do you seen an improvement? Why do you think that is?
 
-Share your results in our Slack homework group.
+How could you improve these results even further? How would you configure the binning and one-hot encoding modules for even better results?
+
+See if you can improve the model, and share your best results in our Slack homework group.
