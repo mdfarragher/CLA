@@ -19,7 +19,7 @@ In this case study you'll be working with the Iowa House Price dataset. This dat
 The data set contains 1460 records and a large number of feature columns involved in assessing home values. You can use any combination of features you like to generate your house price predictions.
 
 There is 1 file in the dataset:
-* [data.csv](https://github.com/mdfarragher/CLA/blob/master/Regression/IowaHousing/data.csv) which contains 1460 records, 80 input features, and one output label. You will use this file to train and evaluate your model.
+* [data.csv](https://raw.githubusercontent.com/mdfarragher/CLA/master/Regression/IowaHousing/data.csv) which contains 1460 records, 80 input features, and one output label. You will use this file to train and evaluate your model.
 
 Download the file and save it locally.
 
