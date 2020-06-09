@@ -47,7 +47,7 @@ Just go to the Datasets page in your Azure Machine Learning workspace, click the
 
 ![Create new dataset](./assets/newdataset.png)
 
-This will upload the Heart Disease file directlty into your workspace, ready for use in a pipeline.
+This will upload the Heart Disease file directly into your workspace, ready for use in a pipeline.
 
 The pipeline for this case study is going to be very similar to the California Housing pipeline you created in the previous lesson. So to get started quickly, simply clone that pipeline: 
 
@@ -110,7 +110,7 @@ Hook the Normalization module up to the Transformation module and the Split modu
 
 Now open the Machine Learning Algorithms group and drag a Two-Class Logistic Regression algorithm onto the pipeline canvas. Hook the module up to the Train Model module.
 
-Configure the regression as follows:
+Configure the logistic regression module as follows:
 
 * Trainer mode: SingleParameter
 * Optimization tolerance: 1e-07
