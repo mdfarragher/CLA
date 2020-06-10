@@ -96,16 +96,46 @@ Now select the Train Model module and set the label column to: label.
 
 That's it, your pipeline is done.
 
-Run the pipeline in a new experiment, and check out the evaluation results after the run has completed.
+## Set up a GPU cluster
+
+Unfortunately the MNIST dataset is too large to run on our basic D1 compute cluster, so we're going to have to quickly provision some heavy duty hardware.
+
+Go to the Compute page in Azure ML Studio and select the Compute Clusters tab. 
+
+Click the +New button, and add the following cluster:
+
+* Compute name: [choose a name for the cluster]
+* Virtual machine type: GPU
+* Virtual machine priority: Low priority
+* Virtual machine size: Standard_NC6
+* Minimum number of nodes: 0
+* Maximum number of nodes: 2
+* Idle seconds...: 120
+
+![Setup GPU cluster](./assets/cluster.png)
+
+Click the blue Create button and wait until the cluster is up and running. 
+
+Then switch back to the pipeline canvas, click the gear icon at the top of the page, and in the information panel switch the pipeline over to the new compute cluster.
+
+![Setup multiclass pipeline step 4](./assets/pipeline4.png)
+
+Now run the pipeline in a new experiment, and check out the evaluation results after the run has completed.
 
 ## Your results
 
-What results do you get? What are your micro- and macro accuracy values? Which logloss and logloss reduction did you get?
+What results do you get? What is your overall accuracy and your micro- and macro precision and recall? 
 
-Do you think the dataset is biased? 
+Do you think the dataset is balanced? 
 
 What can you say about the accuracy? Is this a good model? How far away are you from the human accuracy rate? Is this a superhuman or subhuman AI? 
 
 Think about the pipeline in this assignment. How could you improve the accuracy of the model even further?
 
 Share your results in our Slack group!
+
+## Cleaning up
+
+The NC6 virtual machines are expensive to run, so make sure to delete the GPU cluster after you have completed this assignment!
+
+If you keep the cluster running, you will very quickly spend all of your free Azure credits and your account will be disabled. 
