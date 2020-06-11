@@ -31,6 +31,32 @@ Here's a description of all 31 columns in the data file:
 * Amount: the transaction amount
 * Class: 1 for fraudulent transactions or 0 for normal transactions
 
+## Set up a GPU cluster
+
+This assignment features a lot of training data which migh be too much for our basic D1 compute cluster. To speed up the pipeline we're going to have to quickly provision some heavy duty hardware.
+
+Go to the Compute page in Azure ML Studio and select the Compute Clusters tab. 
+
+Click the +New button, and add the following cluster:
+
+* Compute name: [choose a name for the cluster]
+* Virtual machine type: GPU
+* Virtual machine priority: Low priority
+* Virtual machine size: Standard_NC6
+* Minimum number of nodes: 0
+* Maximum number of nodes: 2
+* Idle seconds...: 120
+
+![Setup GPU cluster](./assets/new-cluster.png)
+
+Click the blue Create button and wait until the cluster is up and running. 
+
+Then when you create your training pipeline, click the gear icon at the top of the page, and in the information panel switch the pipeline over to the new compute cluster.
+
+![Set compute cluster](./assets/set-cluster.png)
+
+Your pipeline will now run on the new cluster. This can make your training time up to 100x faster. 
+
 # Your assignment
 Your assignment is to build a pipeline that loads the data file and trains a binary classification model using the V1-V28 columns. 
 
@@ -43,3 +69,9 @@ Evaluate your model and decide which metrics you're going to use. Make sure to i
 See if you can get the AUC as close to 1 as possible. Share in our group how you did it. Which features did you select, how did you process them, and how did you configure your model? 
 
 Good luck!
+
+## Cleaning up
+
+The NC6 virtual machines are expensive to run, so make sure to delete the GPU cluster after you have completed this assignment!
+
+If you keep the cluster running, you will very quickly spend all of your free Azure credits and your account will be disabled. 
