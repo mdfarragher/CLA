@@ -47,7 +47,7 @@ This will select only the first three columns and exclude the final Timestamp co
 
 ![Setup pipeline step 1](./assets/pipeline1.png)
 
-We're don't need to split the dataset 80/20 for training and scoring, so we can put a training module in next. But because this is a clustering exercise, we need a special module called Train SVD Recommender. 
+We're don't need to split the dataset 80/20 for training and scoring, so we can put a training module in next. But because this is a recommendation exercise, we need a special module called Train SVD Recommender. 
 
 Drag the Train SVD Recommender from the Recommendation group onto the design surface and connect it to the dataset.
 
