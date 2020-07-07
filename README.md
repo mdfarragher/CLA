@@ -1,2 +1,2 @@
 # CLA
-Cloud AI
+Cloud AI with Azure Machine Learning Studio
