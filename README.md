@@ -4,9 +4,9 @@
 
 This repository contains all course assignments of my **Cloud AI with Azure Machine Learning** course and will get you up to speed with Microsoft's new Azure Machine Learning Studio environment.
 
-By working through the code examples, you will learn how to design, train, and evaluate complex AI pipelines in the cloud without having to type a single line of code. I'll provide you with all the setup instructions and data sets you need to get started.
+By working through the examples, you will learn how to design, train, and evaluate complex AI pipelines in the cloud without having to type a single line of code. I'll provide you with all the setup instructions and data sets you need to get started.
 
-You will need an Azure account with administrative privileges to complete the code exercises in this repository.
+You will need an Azure account with administrative privileges to complete the examples in this repository.
 
 Please note that this repository only contains walkthroughs with no additional support. 
 
